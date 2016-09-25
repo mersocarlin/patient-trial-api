@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development && supervisor --watch src ./bin/service.js",
-    "start": "node bin/service.js"
+    "start": "node bin/service.js",
+    "lint": "./node_modules/.bin/eslint src/",
+    "test": "npm run lint && NODE_ENV=test mocha --compilers js:babel-core/register --require babel-polyfill --recursive ./spec"
   },
   "repository": {
     "type": "git",
@@ -15,11 +17,14 @@
   "license": "MIT",
   "homepage": "https://github.com/mersocarlin/patient-trial-api#readme",
   "devDependencies": {
-    "eslint": "^3.3.1",
+    "chai": "^3.5.0",
+    "eslint": "^3.6.0",
     "eslint-config-airbnb": "^10.0.1",
     "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-jsx-a11y": "^2.2.1",
     "eslint-plugin-react": "^6.2.0",
+    "mocha": "^3.0.2",
+    "supertest": "^2.0.0",
     "supervisor": "^0.11.0"
   },
   "dependencies": {

@@ -1,14 +1,8 @@
-const wrap = fn => (...args) => fn(...args).catch(args[2]);
+import ping from './ping';
 
 
 export default (app) => {
-  app.get('/api/_ping', (req, res) => {
-    res
-      .status(200)
-      .send({
-        status: 'ok!',
-      });
-  });
+  app.get('/api/ping', ping.list);
 
   app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
     console.error(err.stack || err); // eslint-disable-line no-console
