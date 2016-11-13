@@ -10,6 +10,10 @@ export function application (config) {
 
   app.set('config', config);
   app.use(bodyParser.json());
+  app.use((req, res, next) => {
+    req.repositories = config.repositories; // eslint-disable-line no-param-reassign
+    next();
+  });
 
   api(app);
 
