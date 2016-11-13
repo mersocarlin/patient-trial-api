@@ -1,3 +1,4 @@
+import patientRepository from './stub/patient-repository';
 
 export function createBigString () {
   let text = '';
@@ -8,4 +9,10 @@ export function createBigString () {
   }
 
   return text;
+}
+
+export function getRepositories () {
+  return {
+    patient: patientRepository(),
+  };
 }
