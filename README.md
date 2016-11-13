@@ -1,4 +1,4 @@
-# patient-trial-api
+# patient-trial-api [![Travis][build-badge]][build]
 
 Prototype for patient-trial-api.
 
@@ -42,3 +42,6 @@ docker-compose run --rm --service-ports test
 # License
 
 MIT
+
+[build-badge]: https://travis-ci.org/mersocarlin/patient-trial-api.svg
+[build]: https://travis-ci.org/mersocarlin/patient-trial-api
